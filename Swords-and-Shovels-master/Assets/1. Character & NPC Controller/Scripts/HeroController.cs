@@ -8,6 +8,8 @@ public class HeroController : MonoBehaviour
     public const string attack1 = "Attack1";
     public const string attack2 = "Attack2";
 
+    public int hp = 10;
+
     Animator animator;
     NavMeshAgent agent;
     AttackModul attackmodul;
