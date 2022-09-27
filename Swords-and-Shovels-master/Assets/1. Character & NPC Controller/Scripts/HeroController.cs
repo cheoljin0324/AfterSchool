@@ -38,13 +38,7 @@ public class HeroController : MonoBehaviour
 
     public void RightClick(Vector3 destination)
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName(idleAndRun))
-        {
-            agent.isStopped = false;
-            agent.angularSpeed = angularSpeed;
-            agent.speed = speed;
-            agent.destination = destination;
-        }
+        
     }
 
     public void LeftClick(Vector3 target)
