@@ -17,9 +17,11 @@ public class AIModule : MonoBehaviour
     // Start is called before the first frame update
 
     int index = 0;
-    void Start()
+    void Awake()
     {
         mainmodule = GetComponent<MainModule>();
+
+        StartCoroutine(Patrol());
 
         mainmodule.currentUpdate = mainmodule.StartCoroutine(Tick());
 
@@ -34,8 +36,13 @@ public class AIModule : MonoBehaviour
         }
 
     }
-    void Patrol()
+    IEnumerator Patrol()
     {
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
+            index = (index + 1) % 3;
+        }
         index = (index+1)%4;
     }
 

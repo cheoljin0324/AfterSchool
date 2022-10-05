@@ -19,7 +19,8 @@ public class InputModule : MonoBehaviour
     void Update()
     {
 
-       
+        if (!mainModule)
+            return;
 
 
 

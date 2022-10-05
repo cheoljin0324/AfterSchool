@@ -16,12 +16,16 @@ public class HPModule : MonoBehaviour
 
     public void Damage(int _damage)
     {
-        StartCoroutine(Hitting(_damage));
+
+        if (mainModule.enabled)
+            StartCoroutine(Hitting(_damage));
 
 
     }
     IEnumerator Hitting(int _damage)
     {
+
+
         hp -= _damage;
         if (hp < 1)
         {

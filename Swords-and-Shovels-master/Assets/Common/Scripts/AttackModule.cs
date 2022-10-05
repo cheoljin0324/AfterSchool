@@ -15,6 +15,9 @@ public class AttackModule : MonoBehaviour
 
     public void Attack()
     {
+        if (!mainModule.enabled)
+            return;
+
         Collider[] cols = Physics.OverlapSphere(transform.position, range);
         for (int i = 0; i < cols.Length; i++)
         {

@@ -25,6 +25,7 @@ public class MainModule : MonoBehaviour
 
 
     public int ad = 5;
+
     void Awake()
     {
         if (isPlayer)
@@ -199,7 +200,11 @@ public class MainModule : MonoBehaviour
 
     }
 
-
+    public void OnDisable()
+    {
+        if(agent.isActiveAndEnabled)
+        Stop();
+    }
 
 
 }
