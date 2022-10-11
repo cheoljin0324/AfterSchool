@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5594512051134005684}
   m_Layer: 0
   m_Name: BatGoblin
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   patrolTime: 10
   aggroRange: 10
   attackRange: 2
-  safeAttackRange: 1
+  safeAttackRange: 1.5
   inAttackRange: 0
 --- !u!114 &6010329131235407079
 MonoBehaviour:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec7cb2e48dc3324db688f75ad61e1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCollider: {fileID: 0}
+  attackCollider: {fileID: 5594512051134005684}
   range: 0
 --- !u!136 &5594512051134005684
 CapsuleCollider:

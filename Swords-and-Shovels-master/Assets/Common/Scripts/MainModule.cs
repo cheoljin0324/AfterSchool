@@ -190,7 +190,7 @@ public class MainModule : MonoBehaviour
 
         Stop();
 
-        animator.Play("Hit");
+        animator.Play("Hit",0,0);
         animator.Update(0);
         yield return new WaitUntil(() => !animator.GetCurrentAnimatorStateInfo(0).IsName("Hit"));
         //NpcCotroller의 코루틴을 다시시작

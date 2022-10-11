@@ -21,21 +21,31 @@ public class AIModule : MonoBehaviour
     {
         mainmodule = GetComponent<MainModule>();
 
-        StartCoroutine(Patrol());
+       
+
+    }
+
+    public void Start()
+    {
+        mainmodule = GetComponent<MainModule>();
+    }
+
+    private void OnEnable()
+    {
 
         mainmodule.currentUpdate = mainmodule.StartCoroutine(Tick());
 
-        InvokeRepeating("Patrol", Random.Range(0, patrolTime), patrolTime);
+        StartCoroutine(Patrol());
 
-        for (int i=0;i<4;i++)
-        { 
+        for (int i = 0; i < 4; i++)
+        {
             Vector3 randomPosition = transform.position + new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
             NavMeshHit hit = new NavMeshHit();
             NavMesh.SamplePosition(randomPosition, out hit, 10, NavMesh.AllAreas);
             waypoint[i] = hit.position;
         }
-
     }
+
     IEnumerator Patrol()
     {
         while (true)
