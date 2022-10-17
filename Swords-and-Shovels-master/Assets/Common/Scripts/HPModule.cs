@@ -30,6 +30,7 @@ public class HPModule : MonoBehaviour
         if (hp < 1)
         {
             gameObject.SetActive(false);
+            ItemSpawnManager.Instance.ItemSpawn("Void", gameObject.transform);
         }
 
         else

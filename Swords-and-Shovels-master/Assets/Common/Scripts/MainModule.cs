@@ -22,8 +22,9 @@ public class MainModule : MonoBehaviour
     public InputModule inputmodule;
     public HPModule hpmodule;
     public AttackModule attackModule;
+    public ItemSpawnManager itemSpawnManager;
 
-
+    public bool isItem = true;
     public int ad = 5;
 
     void Awake()
@@ -206,5 +207,5 @@ public class MainModule : MonoBehaviour
         Stop();
     }
 
-
+    
 }

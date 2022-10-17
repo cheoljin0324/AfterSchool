@@ -82,6 +82,16 @@ public class InputModule : MonoBehaviour
 
 
         }
+
+        if (Input.GetKey(KeyCode.Z))
+        {
+            ZClickDown();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            ZClickUP();
+        }
     }
 
 
@@ -94,9 +104,16 @@ public class InputModule : MonoBehaviour
 
         mainModule.TryAttack(target);
 
+    }
 
+    public void ZClickDown()
+    {
+        mainModule.isItem = true;
+    }
 
-
+    public void ZClickUP()
+    {
+        mainModule.isItem = false;
     }
 
 
