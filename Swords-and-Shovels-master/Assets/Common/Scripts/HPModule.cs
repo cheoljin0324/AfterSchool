@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HPModule : MonoBehaviour
 {
+    [SerializeField]
+    Image hpbar;
     // Start is called before the first frame update
+    private int firsthp;
     public int hp = 50;
     MainModule mainModule;
 
     private void Start()
     {
         mainModule = GetComponent<MainModule>();
+        firsthp = hp;
     }
 
 
@@ -19,7 +24,7 @@ public class HPModule : MonoBehaviour
 
         if (mainModule.enabled)
             StartCoroutine(Hitting(_damage));
-
+            hpbar.fillAmount = (float)hp / firsthp;
 
     }
     IEnumerator Hitting(int _damage)
