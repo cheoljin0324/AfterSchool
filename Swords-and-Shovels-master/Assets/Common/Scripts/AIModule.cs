@@ -77,7 +77,6 @@ public class AIModule : MonoBehaviour
             {
                 mainmodule.Stop();
                 inAttackRange = true;
-
             }
 
             if (MainModule.player != null && Vector3.Distance(transform.position, MainModule.player.transform.position) < attackRange && inAttackRange)

@@ -44,7 +44,7 @@ public class MobSpawner : Trigger
             NavMeshHit hit;
             if (NavMesh.SamplePosition(summonPos, out hit, 0.5f, NavMesh.AllAreas))
             {
-                Collider[] cols = Physics.OverlapCapsule(summonsMonsters[i].transform.position, summonsMonsters[i].transform.position + 3 * Vector3.up, summonsMonsters[i].GetComponent<CapsuleCollider>().radius);
+                Collider[] cols = Physics.OverlapCapsule(hit.position, hit.position + 3 * Vector3.up, summonsMonsters[i].GetComponent<CapsuleCollider>().radius);
                 for (int j = 0; j < cols.Length; j++)
                 {
                     if (cols[j].GetComponent<MainModule>() == null)

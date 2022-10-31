@@ -51,13 +51,24 @@ public class MainModule : MonoBehaviour
         animator.SetFloat("Speed", agent.velocity.magnitude);
 
         Collider[] cols = Physics.OverlapSphere(transform.position, 0.1f);
+        float minimumDistItem = 9999;
+        ItemModule selecteditem = null;
 
         for (int i = 0; i < cols.Length; i++)
         {
             cols[i].GetComponent<Trigger>()?.EnterTrigger();
+            ItemModule module = cols[i].GetComponent<ItemModule>();
+            if (module)
+            {
+                if((cols[i].transform.position - transform.position).magnitude < minimumDistItem)
+                {
+                    selecteditem = module;
+                    minimumDistItem = (cols[i].transform.position - transform.position).magnitude;
+                }
+            }
 
         }
-
+        ItemModule.SelectedItem = selecteditem;
     }
 
 
